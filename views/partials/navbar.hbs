@@ -1,0 +1,33 @@
+<div class="sdfs">
+  <!-- Header -->
+  <section id="header">
+    <div class="header container-fluid">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/">
+            <h1>MacBro</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="/" data-after="Home">Home</a></li>
+            <li><a href="/notebooks" data-after="Notebooks">Notebooks</a></li>
+            {{#if isAuth}}
+            <li><a href="/add" data-after="Create">Create</a></li>
+            <li><a href="/card" data-after="Basket">Basket</a></li>
+            <li><a href="/orders" data-after="Order">Order</a></li>
+            <li><a href="/profile" data-after="Profile">Profile</a></li>
+            <li><a href="/auth/logout" data-after="Log out">Log out</a></li>
+            {{else}}
+            <li><a href="/auth/login#login" data-after="Log in">Log in</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+</div>

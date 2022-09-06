@@ -1,0 +1,108 @@
+<div class="row auth">
+  <div class="col">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="home-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#home"
+          type="button"
+          role="tab"
+          aria-controls="home"
+          aria-selected="true"
+        >Login</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="profile-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#profile"
+          type="button"
+          role="tab"
+          aria-controls="profile"
+          aria-selected="false"
+        >Singin</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+       <div
+            class="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+      <div id="login" class="col">
+        {{#if loginError}}
+          <p class="alert">{{loginError}}</p>
+        {{/if}}
+        <h1 class="text-center p-4">Log In Notebook Store</h1>
+        <form action="/auth/login" method="POST">
+         
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" name="email" id="loginEmail" />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" id="loginPassword" />
+            </div>
+            <div class="text-center p-5">
+              <button
+                type="summit"
+                class="btn btn-primary w-50 p-3 botton"
+              >LOGIN</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+
+  <div
+        class="tab-pane fade"
+        id="profile"
+        role="tabpanel"
+        aria-labelledby="profile-tab  "
+      >
+      <div id="register" class="col">
+    {{#if registerError}}
+      <p class="alert">{{registerError}}</p>
+    {{/if}}
+    <h1 class="text-center p-4">Create Accaunt</h1>
+    <form action="/auth/register" method="POST" >
+        <div class="mb-3">
+          <label for="registerUsername" class="form-label">Username</label>
+          <input type="text" class="form-control" name="name" id="registerUsername" />
+        </div>
+        <div class="mb-3">
+          <label for="registerEmail" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" id="registerEmail" />
+        </div>
+        <div class="mb-3">
+          <label for="registerPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="registerPassword" />
+        </div>
+        <div class="mb-3">
+          <label for="registerPasswordAgain" class="form-label">Confirm password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="confirm"
+            id="registerPasswordAgain"
+          />
+        </div>
+        <div class="text-center p-5">
+          <button
+            type="summit"
+            class="btn btn-primary w-50 p-3 botton"
+          >SINGIN</button>
+        </div>
+    </form>
+    </div>
+
+      </div>
+    </div>
+  </div>
+</div>
